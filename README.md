@@ -15,11 +15,11 @@ automatically when you run `claude` from this directory.
 | Path | Role | Status |
 |---|---|---|
 | `CLAUDE.md` | Pipeline contract: tokens, block rules, 14-page map, SEO/schema rules | ✅ present |
-| `sitegen-sample/` | **Input (read-only):** any exported sitegen page — the format to reverse-engineer | ⛔ empty — **needed to start** |
+| `sitegen-sample/` | **Input (read-only):** the real sitegen export + Visual Identity settings | ✅ provided |
 | `design-export/` | **Input (read-only):** unpacked Claude Design export (visuals) | ⛔ empty — needed for Step 2 |
 | `assets/` | Shared assets (`logo.png`, …) | ⛔ empty |
 | `dist/` | **Output:** converted `block-NN-name.html` per page | — nothing generated yet |
-| `SITEGEN-NOTES.md` | Step 1 output: reverse-engineered sitegen format (client confirms before converting) | — not created yet |
+| `SITEGEN-NOTES.md` | Step 1 output: reverse-engineered sitegen format (client confirms before converting) | ✅ drafted — **awaiting sign-off** |
 | `CHANGELOG.md` | Running log of adaptation decisions | ✅ present |
 
 `appliance-repair-seo-competitor-research.md` is prior Australia-market SEO
@@ -45,6 +45,8 @@ research, unrelated to this Canadian project — left in place, untouched.
 
 ## Current status
 
-Project is scaffolded but **Step 1 has not run**: `sitegen-sample/` is empty, and
-sitegen's format must never be guessed (per `CLAUDE.md`). Add a sitegen export to
-unblock.
+**Step 1 done, awaiting sign-off.** The sitegen format is reverse-engineered from
+the client's export into [`SITEGEN-NOTES.md`](./SITEGEN-NOTES.md). Before Home is
+converted, the client needs to resolve the conflicts/open questions in that file's
+§12–§13 (fonts, NAP tokenization + multi-location, per-page SEO placement, spacing,
+dark-section palette). No page conversion and no format guessing has happened.
