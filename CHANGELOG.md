@@ -3,6 +3,24 @@
 Running log of why converted markup differs from the Claude Design export, so
 the client can trace every deviation. Newest first.
 
+## 2026-07-06 — Block 01 (Header) rebuilt for sitegen compatibility
+
+- Client reported the first header was **rejected by sitegen**. Root cause: it
+  contained constructs absent from the working sample — an inline `<script>`
+  (scroll-collapse), custom `data-site-header`/`data-topbar` attributes,
+  multi-statement `onclick`, and an extra comment before `<!-- STYLING-HEADER -->`.
+- Rebuilt strictly on the sample's skeleton: fixed-height bars (`h-[36px]`/
+  `h-[72px]`), single-statement `onclick` toggles, mobile submenus using the
+  sample's exact `hidden bg-[#F1EBE0] flex flex-col` pattern, no `<script>`, no
+  custom attributes, no leading comment. Dropped the scroll-collapse and the
+  hamburger→X / chevron-rotate niceties (all JS-driven) for compatibility.
+- **Added a "Service Area" dropdown** (Vaughan, Aurora) on desktop and as a
+  mobile accordion, per request — cities now live in a popup mirroring Brands;
+  the two top-level city links were consolidated into it. Kept the design's
+  clock topbar icon and desktop outline call button.
+- Re-verified by offline render: desktop nav + both dropdowns + both mobile
+  accordions stack and behave correctly.
+
 ## 2026-07-06 — Block 01 (Header) converted
 
 - Extracted the client's Claude Design export into `design-export/` (read-only
