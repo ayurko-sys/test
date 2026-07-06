@@ -1,0 +1,4 @@
+# Redundant 5.1 MB rendered standalone (base64-inlined preview). The editable
+# design sources (*.dc.html, export/, uploads/) are committed; this duplicate is
+# available in the original design zip if needed. Kept out of git to avoid bloat.
+design-export/Oak Ridges - Header States (standalone).html

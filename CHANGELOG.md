@@ -3,6 +3,29 @@
 Running log of why converted markup differs from the Claude Design export, so
 the client can trace every deviation. Newest first.
 
+## 2026-07-06 — Block 01 (Header) converted
+
+- Extracted the client's Claude Design export into `design-export/` (read-only
+  input). Header source: `design-export/export/header-states-src.html` (states A–D).
+- Built `dist/home/block-01-header.html` — the site-wide **STYLING-HEADER** —
+  matching the design: topbar clock + hours + phone; desktop nav with Home active
+  (gold underline) and a Brands dropdown (gold left-accent card); desktop outline
+  call button + gold "Book a repair"; mobile centered-phone topbar with bordered
+  call/menu buttons and a slide-down menu with a Brands accordion; topbar
+  auto-collapses on scroll (design State A note).
+- Adaptations per contract: Tailwind utilities + inline-hex fallback on the bars;
+  editable strings tagged `data-editable="text"`; logo tagged `data-image-editable`
+  and **swapped from the design's acorn to the example project logo** (per request);
+  NAP via `{{nap.*}}`; brand/nav hrefs use the CLAUDE.md site-map URLs (`/lg/`,
+  `/about-us/`, …), not the design's `/brands/*` placeholders; "Book a repair" →
+  `/contact/` (valid on every page, matching the design's link).
+- **Verified by offline render** (Tailwind compiled locally since the Play CDN is
+  network-blocked here; Chromium): all four states + scroll-collapse match. Fixed
+  one render-caught bug — the mobile Brands accordion needed a `flex` toggle to
+  stack vertically.
+- Kept the 5.1 MB standalone design preview out of git (see `.gitignore`); all
+  editable design sources are committed.
+
 ## 2026-07-06 — Client decisions folded into the contract
 
 Resolved three CLAUDE.md-vs-sitegen conflicts and updated CLAUDE.md accordingly:

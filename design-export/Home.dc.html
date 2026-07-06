@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Oak Ridges Appliance Repair — Vaughan &amp; Aurora | Deep roots. Fast fixes.</title>
+<link rel="icon" href="uploads/oak-ridges-acorn-sticker.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css">
+<style>
+html,body{margin:0;padding:0;background:#F7F3EA;}
+</style>
+</helmet>
+
+<div style="font-family:'Figtree',sans-serif;color:#26261F;background:#F7F3EA;min-width:1440px;">
+
+<!-- BLOCK 01 — TOPBAR -->
+<section id="block-01-topbar" data-screen-label="BLOCK 01 — TOPBAR" style="background:#2E5636;">
+  <div style="max-width:1160px;margin:0 auto;padding:10px 40px;display:flex;justify-content:space-between;align-items:center;">
+    <span style="color:#E7EFE7;font-size:14px;">Serving Vaughan &amp; Aurora since 2022</span>
+    <a href="tel:9055550148" style="text-decoration:none;color:#F7F3EA;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;" style-hover="color:#C29A55;"><i class="ti ti-phone" style="font-size:16px;" aria-hidden="true"></i>(905) 555-0148</a>
+  </div>
+</section>
+
+<!-- BLOCK 02 — HEADER -->
+<section id="block-02-header" data-screen-label="BLOCK 02 — HEADER" style="background:#F7F3EA;border-bottom:1px solid #E4DCC9;">
+  <div style="max-width:1160px;margin:0 auto;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;">
+    <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:12px;">
+      <img src="uploads/oak-ridges-acorn-sticker.png" alt="Oak Ridges Appliance Repair" style="width:44px;height:44px;">
+      <span style="display:flex;flex-direction:column;">
+        <span style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:#2E5636;line-height:1.1;">Oak Ridges</span>
+        <span style="font-size:11px;letter-spacing:0.14em;color:#8A6A2F;font-weight:500;">APPLIANCE REPAIR</span>
+      </span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500;">
+      <a href="/" style="text-decoration:none;color:#1F3D26;border-bottom:2px solid #C29A55;padding-bottom:2px;">Home</a>
+      <a href="/vaughan" style="text-decoration:none;color:#1F3D26;" style-hover="color:#8A6A2F;">Vaughan</a>
+      <a href="/aurora" style="text-decoration:none;color:#1F3D26;" style-hover="color:#8A6A2F;">Aurora</a>
+      <div style="position:relative;" onMouseEnter="{{ openBrands }}" onMouseLeave="{{ closeBrands }}">
+        <span style="color:#1F3D26;display:inline-flex;align-items:center;gap:4px;cursor:pointer;" style-hover="color:#8A6A2F;">Brands <i class="ti ti-chevron-down" style="font-size:14px;" aria-hidden="true"></i></span>
+        <sc-if value="{{ brandsOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:100%;left:-16px;padding-top:12px;z-index:50;">
+            <div style="background:#FFFFFF;border:1px solid #E4DCC9;border-radius:8px;box-shadow:0 10px 30px rgba(31,61,38,0.15);display:flex;flex-direction:column;min-width:180px;padding:8px 0;">
+              <a href="/brands/lg" style="text-decoration:none;color:#1F3D26;font-size:15px;padding:9px 20px;" style-hover="background:#E7EFE7;">LG</a>
+              <a href="/brands/samsung" style="text-decoration:none;color:#1F3D26;font-size:15px;padding:9px 20px;" style-hover="background:#E7EFE7;">Samsung</a>
+              <a href="/brands/whirlpool" style="text-decoration:none;color:#1F3D26;font-size:15px;padding:9px 20px;" style-hover="background:#E7EFE7;">Whirlpool</a>
+              <a href="/brands/bosch" style="text-decoration:none;color:#1F3D26;font-size:15px;padding:9px 20px;" style-hover="background:#E7EFE7;">Bosch</a>
+              <a href="/brands/kitchenaid" style="text-decoration:none;color:#1F3D26;font-size:15px;padding:9px 20px;" style-hover="background:#E7EFE7;">KitchenAid</a>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      <a href="/about" style="text-decoration:none;color:#1F3D26;" style-hover="color:#8A6A2F;">About</a>
+      <a href="/contact" style="text-decoration:none;color:#1F3D26;" style-hover="color:#8A6A2F;">Contact</a>
+    </nav>
+    <a href="/contact" style="text-decoration:none;background:#C29A55;color:#26261F;font-size:15px;font-weight:600;padding:12px 22px;border-radius:8px;white-space:nowrap;" style-hover="background:#B08843;">Book a repair</a>
+  </div>
+</section>
+
+<!-- BLOCK 03 — HERO -->
+<section id="block-03-hero" data-screen-label="BLOCK 03 — HERO" style="background:#F7F3EA;padding:80px 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 440px;gap:64px;align-items:center;">
+    <div>
+      <p style="margin:0 0 14px;font-size:13px;letter-spacing:0.16em;color:#8A6A2F;font-weight:500;">APPLIANCE REPAIR · YORK REGION</p>
+      <h1 style="font-family:'Fraunces',serif;font-weight:600;font-size:56px;line-height:1.1;color:#2E5636;margin:0;">Deep roots.<br>Fast fixes.</h1>
+      <div style="width:64px;height:2px;background:#C29A55;margin:20px 0 22px;"></div>
+      <p style="font-size:19px;line-height:1.7;color:#26261F;margin:0 0 28px;max-width:520px;">Honest appliance repair by your neighbours in Vaughan and Aurora — not a call centre.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px;">
+        <a href="tel:9055550148" style="text-decoration:none;background:#C29A55;color:#26261F;font-size:17px;font-weight:600;padding:15px 28px;border-radius:8px;display:inline-flex;align-items:center;gap:10px;" style-hover="background:#B08843;"><i class="ti ti-phone" style="font-size:19px;" aria-hidden="true"></i>Call now</a>
+        <a href="/contact" style="text-decoration:none;border:1px solid #2E5636;color:#1F3D26;font-size:17px;font-weight:500;padding:14px 28px;border-radius:8px;display:inline-block;" style-hover="background:#E7EFE7;">Book online</a>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2E5636;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500;color:#1F3D26;background:#F7F3EA;"><i class="ti ti-calendar-check" style="font-size:15px;color:#2E5636;" aria-hidden="true"></i>Since 2022</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2E5636;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500;color:#1F3D26;background:#F7F3EA;"><i class="ti ti-flame" style="font-size:15px;color:#2E5636;" aria-hidden="true"></i>TSSA gas licence</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2E5636;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500;color:#1F3D26;background:#F7F3EA;"><i class="ti ti-shield-check" style="font-size:15px;color:#2E5636;" aria-hidden="true"></i>90-day warranty</span>
+      </div>
+    </div>
+    <form style="background:#FFFFFF;border-radius:12px;padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:0 8px 28px rgba(31,61,38,0.12);border:1px solid #E4DCC9;" onSubmit="{{ noopSubmit }}">
+      <p style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:#2E5636;margin:0 0 4px;">Get a technician today</p>
+      <select aria-label="What needs fixing?" style="border:1px solid #E4DCC9;border-radius:8px;padding:12px 14px;font-size:15px;font-family:'Figtree',sans-serif;color:#26261F;background:#FFFFFF;width:100%;box-sizing:border-box;" style-focus="outline:2px solid #2E5636;outline-offset:1px;">
+        <option>What needs fixing?</option>
+        <option>Fridge or freezer</option><option>Washer</option><option>Dryer</option><option>Dishwasher</option><option>Stove or cooktop</option><option>Oven</option>
+      </select>
+      <select aria-label="Your city" style="border:1px solid #E4DCC9;border-radius:8px;padding:12px 14px;font-size:15px;font-family:'Figtree',sans-serif;color:#26261F;background:#FFFFFF;width:100%;box-sizing:border-box;" style-focus="outline:2px solid #2E5636;outline-offset:1px;">
+        <option>Vaughan or Aurora?</option>
+        <option>Vaughan</option><option>Aurora</option>
+      </select>
+      <input type="tel" placeholder="Your phone number" style="border:1px solid #E4DCC9;border-radius:8px;padding:12px 14px;font-size:15px;font-family:'Figtree',sans-serif;color:#26261F;width:100%;box-sizing:border-box;" style-focus="outline:2px solid #2E5636;outline-offset:1px;">
+      <button type="submit" style="background:#2E5636;color:#F7F3EA;border:none;cursor:pointer;font-family:'Figtree',sans-serif;font-size:16px;font-weight:600;padding:14px;border-radius:8px;width:100%;" style-hover="background:#1F3D26;">Request a call back</button>
+      <p style="font-size:14px;color:#6B6558;margin:0;text-align:center;">Diagnostic fee waived with repair</p>
+    </form>
+  </div>
+</section>
+
+<!-- BLOCK 04 — TRUST BAR -->
+<section id="block-04-trust-bar" data-screen-label="BLOCK 04 — TRUST BAR" style="background:#E7EFE7;padding:28px 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+    <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2E5636;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:500;color:#1F3D26;background:#F7F3EA;"><i class="ti ti-calendar-check" style="font-size:16px;color:#2E5636;" aria-hidden="true"></i>Since 2022</span>
+    <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2E5636;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:500;color:#1F3D26;background:#F7F3EA;"><i class="ti ti-flame" style="font-size:16px;color:#2E5636;" aria-hidden="true"></i>TSSA gas licence</span>
+    <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2E5636;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:500;color:#1F3D26;background:#F7F3EA;"><i class="ti ti-shield-check" style="font-size:16px;color:#2E5636;" aria-hidden="true"></i>90-day warranty</span>
+    <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid #2E5636;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:500;color:#1F3D26;background:#F7F3EA;"><i class="ti ti-clock-bolt" style="font-size:16px;color:#2E5636;" aria-hidden="true"></i>Same-day service</span>
+  </div>
+</section>
+
+<!-- BLOCK 05 — ABOUT TEASER -->
+<section id="block-05-about-teaser" data-screen-label="BLOCK 05 — ABOUT TEASER" style="background:#F7F3EA;padding:80px 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:48px;">
+    <img src="uploads/oak-ridges-acorn-sticker.png" alt="" style="width:96px;height:96px;flex-shrink:0;">
+    <div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;color:#2E5636;margin:0 0 14px;">Rooted right here in York Region</h2>
+      <p style="font-size:17px;line-height:1.7;color:#26261F;margin:0 0 16px;max-width:720px;">We're a small local crew, not a franchise. Since 2022 we've kept our service area deliberately tight — Vaughan and Aurora only — so we can promise same-day visits and actually keep that promise.</p>
+      <a href="/about" style="text-decoration:none;color:#8A6A2F;font-size:16px;font-weight:600;display:inline-flex;align-items:center;gap:6px;" style-hover="color:#1F3D26;">More about us <i class="ti ti-arrow-right" style="font-size:16px;" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 06 — SERVICES -->
+<section id="block-06-services" data-screen-label="BLOCK 06 — SERVICES" style="background:#FFFFFF;padding:80px 0;border-top:1px solid #E4DCC9;border-bottom:1px solid #E4DCC9;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;">
+    <p style="margin:0 0 10px;font-size:13px;letter-spacing:0.16em;color:#8A6A2F;font-weight:500;text-align:center;">WHAT WE REPAIR</p>
+    <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;color:#2E5636;margin:0 0 40px;text-align:center;">The appliances that keep a house running</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <sc-for list="{{ services }}" as="svc" hint-placeholder-count="6">
+        <div style="background:#F7F3EA;border:1px solid #E4DCC9;border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:10px;" style-hover="border-color:#2E5636;">
+          <i class="ti {{ svc.icon }}" style="font-size:32px;color:#2E5636;" aria-hidden="true"></i>
+          <span style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#2E5636;">{{ svc.title }}</span>
+          <span style="font-size:15px;color:#6B6558;line-height:1.5;">{{ svc.symptoms }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 07 — WHY CHOOSE US -->
+<section id="block-07-why-choose-us" data-screen-label="BLOCK 07 — WHY CHOOSE US" style="background:#F7F3EA;padding:80px 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;">
+    <p style="margin:0 0 10px;font-size:13px;letter-spacing:0.16em;color:#8A6A2F;font-weight:500;">WHY CHOOSE US</p>
+    <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;color:#2E5636;margin:0 0 40px;">Why neighbours call us first</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <i class="ti ti-clock-bolt" style="font-size:34px;color:#2E5636;" aria-hidden="true"></i>
+        <span style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#2E5636;">Same-day visits</span>
+        <span style="font-size:15px;line-height:1.6;color:#26261F;">Call before noon and we're usually at your door the same day.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <i class="ti ti-receipt-2" style="font-size:34px;color:#2E5636;" aria-hidden="true"></i>
+        <span style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#2E5636;">Upfront pricing</span>
+        <span style="font-size:15px;line-height:1.6;color:#26261F;">Flat quote before any work starts — and the diagnostic fee is waived with repair.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <i class="ti ti-shield-check" style="font-size:34px;color:#2E5636;" aria-hidden="true"></i>
+        <span style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#2E5636;">90-day warranty</span>
+        <span style="font-size:15px;line-height:1.6;color:#26261F;">Parts and labour covered for 90 days on every repair, in writing.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <i class="ti ti-certificate" style="font-size:34px;color:#2E5636;" aria-hidden="true"></i>
+        <span style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#2E5636;">Licensed &amp; insured</span>
+        <span style="font-size:15px;line-height:1.6;color:#26261F;">Fully insured, with a TSSA licence for gas appliances.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 08 — CTA BAND -->
+<section id="block-08-cta-band" data-screen-label="BLOCK 08 — CTA BAND" style="background:#2E5636;padding:80px 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;text-align:center;">
+    <p style="margin:0 0 14px;font-size:13px;letter-spacing:0.16em;color:#C29A55;font-weight:500;">BROKEN APPLIANCE?</p>
+    <a href="tel:9055550148" style="text-decoration:none;font-family:'Fraunces',serif;font-weight:600;font-size:52px;color:#F7F3EA;display:inline-flex;align-items:center;gap:18px;" style-hover="color:#C29A55;"><i class="ti ti-phone" style="font-size:44px;color:#C29A55;" aria-hidden="true"></i>(905) 555-0148</a>
+    <p style="margin:18px 0 0;font-size:19px;color:#E7EFE7;">We'll be there today.</p>
+  </div>
+</section>
+
+<!-- BLOCK 09 — SERVICE AREAS -->
+<section id="block-09-service-areas" data-screen-label="BLOCK 09 — SERVICE AREAS" style="background:#F7F3EA;padding:80px 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;">
+    <p style="margin:0 0 10px;font-size:13px;letter-spacing:0.16em;color:#8A6A2F;font-weight:500;">SERVICE AREAS</p>
+    <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;color:#2E5636;margin:0 0 40px;">Two cities. That's the whole map.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <a href="/vaughan" style="text-decoration:none;position:relative;overflow:hidden;background:#E7EFE7;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:12px;" style-hover="background:#DCE8DC;">
+        <svg viewBox="0 0 520 240" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.35;"><g stroke="#2E5636" stroke-width="1.5" fill="none" opacity="0.35"><path d="M-10 60 L530 40"></path><path d="M-10 130 L530 150"></path><path d="M-10 200 L530 190"></path><path d="M90 -10 L110 250"></path><path d="M240 -10 L230 250"></path><path d="M390 -10 L410 250"></path><circle cx="230" cy="140" r="6" fill="#2E5636" stroke="none"></circle></g></svg>
+        <span style="position:relative;font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:#1F3D26;display:flex;align-items:center;gap:10px;"><i class="ti ti-map-pin" style="font-size:24px;" aria-hidden="true"></i>Appliance repair in Vaughan</span>
+        <span style="position:relative;font-size:16px;color:#1F3D26;line-height:1.6;max-width:400px;">Woodbridge, Maple, Concord, Kleinburg and Thornhill — usually at your door within hours.</span>
+        <span style="position:relative;color:#8A6A2F;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:6px;">Vaughan service page <i class="ti ti-arrow-right" style="font-size:15px;" aria-hidden="true"></i></span>
+      </a>
+      <a href="/aurora" style="text-decoration:none;position:relative;overflow:hidden;background:#E7EFE7;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:12px;" style-hover="background:#DCE8DC;">
+        <svg viewBox="0 0 520 240" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.35;"><g stroke="#2E5636" stroke-width="1.5" fill="none" opacity="0.35"><path d="M-10 50 L530 70"></path><path d="M-10 120 L530 110"></path><path d="M-10 195 L530 205"></path><path d="M130 -10 L120 250"></path><path d="M280 -10 L290 250"></path><path d="M430 -10 L420 250"></path><circle cx="290" cy="110" r="6" fill="#2E5636" stroke="none"></circle></g></svg>
+        <span style="position:relative;font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:#1F3D26;display:flex;align-items:center;gap:10px;"><i class="ti ti-map-pin" style="font-size:24px;" aria-hidden="true"></i>Appliance repair in Aurora</span>
+        <span style="position:relative;font-size:16px;color:#1F3D26;line-height:1.6;max-width:400px;">From Yonge Street to Bayview, Aurora Village to Highland Gate — same-day slots most days.</span>
+        <span style="position:relative;color:#8A6A2F;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:6px;">Aurora service page <i class="ti ti-arrow-right" style="font-size:15px;" aria-hidden="true"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 10 — BRANDS -->
+<section id="block-10-brands" data-screen-label="BLOCK 10 — BRANDS" style="background:#FFFFFF;padding:80px 0;border-top:1px solid #E4DCC9;border-bottom:1px solid #E4DCC9;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;">
+    <p style="margin:0 0 10px;font-size:13px;letter-spacing:0.16em;color:#8A6A2F;font-weight:500;">BRANDS WE KNOW</p>
+    <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;color:#2E5636;margin:0 0 40px;">Factory quirks and all</h2>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-bottom:36px;">
+      <sc-for list="{{ brands }}" as="b" hint-placeholder-count="5">
+        <a href="{{ b.href }}" style="text-decoration:none;background:#F7F3EA;border:1px solid #E4DCC9;border-radius:12px;padding:24px 20px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;" style-hover="border-color:#2E5636;">
+          <span style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:#2E5636;">{{ b.name }}</span>
+          <span style="font-size:14px;color:#6B6558;">{{ b.note }}</span>
+          <span style="color:#8A6A2F;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:5px;">Repairs <i class="ti ti-arrow-right" style="font-size:14px;" aria-hidden="true"></i></span>
+        </a>
+      </sc-for>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;">
+      <span style="font-size:14px;color:#6B6558;">We also service:</span>
+      <span style="font-size:16px;font-weight:600;color:#A8A092;">Maytag</span>
+      <span style="font-size:16px;font-weight:600;color:#A8A092;">GE</span>
+      <span style="font-size:16px;font-weight:600;color:#A8A092;">Miele</span>
+      <span style="font-size:16px;font-weight:600;color:#A8A092;">Frigidaire</span>
+      <span style="font-size:16px;font-weight:600;color:#A8A092;">Kenmore</span>
+      <span style="font-size:16px;font-weight:600;color:#A8A092;">Electrolux</span>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 11 — REVIEWS -->
+<section id="block-11-reviews" data-screen-label="BLOCK 11 — REVIEWS" style="background:#E7EFE7;padding:80px 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;">
+    <p style="margin:0 0 10px;font-size:13px;letter-spacing:0.16em;color:#8A6A2F;font-weight:500;">REVIEWS</p>
+    <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;color:#2E5636;margin:0 0 40px;">What the neighbours say</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="4">
+        <div style="background:#FFFFFF;border:1px solid #E4DCC9;border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:12px;">
+          <span style="color:#C29A55;display:flex;gap:3px;font-size:18px;"><i class="ti ti-star-filled" aria-hidden="true"></i><i class="ti ti-star-filled" aria-hidden="true"></i><i class="ti ti-star-filled" aria-hidden="true"></i><i class="ti ti-star-filled" aria-hidden="true"></i><i class="ti ti-star-filled" aria-hidden="true"></i></span>
+          <p style="font-family:'Fraunces',serif;font-size:17px;color:#26261F;margin:0;line-height:1.6;">"{{ r.quote }}"</p>
+          <span style="font-size:14px;color:#6B6558;">{{ r.who }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 12 — HOW WE WORK -->
+<section id="block-12-how-we-work" data-screen-label="BLOCK 12 — HOW WE WORK" style="background:#F7F3EA;padding:80px 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;">
+    <p style="margin:0 0 10px;font-size:13px;letter-spacing:0.16em;color:#8A6A2F;font-weight:500;">HOW WE WORK</p>
+    <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:36px;color:#2E5636;margin:0 0 40px;">From first call to fixed</h2>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <span style="width:44px;height:44px;border-radius:999px;background:#2E5636;color:#F7F3EA;font-family:'Fraunces',serif;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;">{{ st.n }}</span>
+          <span style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:#2E5636;line-height:1.3;">{{ st.title }}</span>
+          <span style="font-size:14px;line-height:1.6;color:#26261F;">{{ st.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 13 — LOCAL TOUCH -->
+<section id="block-13-local-touch" data-screen-label="BLOCK 13 — LOCAL TOUCH" style="background:#F7F3EA;padding:80px 0 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px 56px;text-align:center;">
+    <img src="uploads/oak-ridges-acorn-sticker.png" alt="" style="width:48px;height:48px;margin-bottom:16px;">
+    <p style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;color:#2E5636;margin:0 auto;max-width:720px;line-height:1.5;">Named after the ridge that runs through York Region — we're from here, and we stay here.</p>
+  </div>
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="display:block;width:100%;height:48px;" role="img" aria-label="Ridgeline divider"><path d="M0 48 L0 34 L190 15 L380 30 L610 8 L840 26 L1100 12 L1290 28 L1440 18 L1440 48 Z" fill="#2E5636"></path></svg>
+</section>
+
+<!-- BLOCK 14 — FOOTER -->
+<section id="block-14-footer" data-screen-label="BLOCK 14 — FOOTER" style="background:#2E5636;padding:80px 0 0;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="uploads/oak-ridges-acorn-sticker.png" alt="Oak Ridges Appliance Repair" style="width:44px;height:44px;">
+        <span style="display:flex;flex-direction:column;">
+          <span style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#F7F3EA;line-height:1.1;">Oak Ridges</span>
+          <span style="font-size:11px;letter-spacing:0.14em;color:#C29A55;font-weight:500;">APPLIANCE REPAIR</span>
+        </span>
+      </div>
+      <p style="margin:0;font-size:15px;line-height:1.6;color:#E7EFE7;">Deep roots. Fast fixes.<br>Vaughan &amp; Aurora, Ontario · since 2022.</p>
+      <p style="margin:0;font-size:15px;color:#E7EFE7;display:flex;align-items:center;gap:8px;"><i class="ti ti-clock" style="font-size:16px;color:#C29A55;" aria-hidden="true"></i>Mon–Sat 8 am – 8 pm</p>
+      <a href="mailto:info@oakridgesappliancerepair.ca" style="text-decoration:none;font-size:15px;color:#E7EFE7;display:flex;align-items:center;gap:8px;" style-hover="color:#C29A55;"><i class="ti ti-mail" style="font-size:16px;color:#C29A55;" aria-hidden="true"></i>info@oakridgesappliancerepair.ca</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <span style="font-size:13px;letter-spacing:0.16em;color:#C29A55;font-weight:500;">VAUGHAN</span>
+      <p style="margin:0;font-size:15px;line-height:1.6;color:#E7EFE7;">240 Chrislea Rd, Unit 11<br>Vaughan, ON L4L 8V1</p>
+      <a href="tel:9055550148" style="text-decoration:none;font-size:15px;font-weight:600;color:#F7F3EA;" style-hover="color:#C29A55;">(905) 555-0148</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <span style="font-size:13px;letter-spacing:0.16em;color:#C29A55;font-weight:500;">AURORA</span>
+      <p style="margin:0;font-size:15px;line-height:1.6;color:#E7EFE7;">15483 Yonge St, Unit 5<br>Aurora, ON L4G 1P3</p>
+      <a href="tel:2895550173" style="text-decoration:none;font-size:15px;font-weight:600;color:#F7F3EA;" style-hover="color:#C29A55;">(289) 555-0173</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <span style="font-size:13px;letter-spacing:0.16em;color:#C29A55;font-weight:500;">EXPLORE</span>
+      <a href="/vaughan" style="text-decoration:none;font-size:15px;color:#E7EFE7;" style-hover="color:#C29A55;">Vaughan</a>
+      <a href="/aurora" style="text-decoration:none;font-size:15px;color:#E7EFE7;" style-hover="color:#C29A55;">Aurora</a>
+      <a href="/brands/lg" style="text-decoration:none;font-size:15px;color:#E7EFE7;" style-hover="color:#C29A55;">Brands</a>
+      <a href="/about" style="text-decoration:none;font-size:15px;color:#E7EFE7;" style-hover="color:#C29A55;">About</a>
+      <a href="/contact" style="text-decoration:none;font-size:15px;color:#E7EFE7;" style-hover="color:#C29A55;">Contact</a>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(247,243,234,0.2);margin-top:56px;">
+    <div style="max-width:1160px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
+      <span style="font-size:13px;color:#B9CBB9;">© 2026 Oak Ridges Appliance Repair · oakridgesappliancerepair.ca</span>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <a href="/warranty" style="text-decoration:none;font-size:13px;color:#B9CBB9;" style-hover="color:#C29A55;">Warranty</a>
+        <a href="/privacy" style="text-decoration:none;font-size:13px;color:#B9CBB9;" style-hover="color:#C29A55;">Privacy Policy</a>
+        <a href="/terms" style="text-decoration:none;font-size:13px;color:#B9CBB9;" style-hover="color:#C29A55;">Terms &amp; Conditions</a>
+        <a href="/cancellation" style="text-decoration:none;font-size:13px;color:#B9CBB9;" style-hover="color:#C29A55;">Cancellation Policy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { brandsOpen: false };
+  renderVals() {
+    return {
+      brandsOpen: this.state.brandsOpen,
+      openBrands: () => this.setState({ brandsOpen: true }),
+      closeBrands: () => this.setState({ brandsOpen: false }),
+      noopSubmit: (e) => e.preventDefault(),
+      services: [
+        { icon: "ti-fridge", title: "Fridge & freezer", symptoms: "Not cooling, leaking water, frost build-up, noisy compressor" },
+        { icon: "ti-wash-machine", title: "Washer", symptoms: "Won't drain or spin, shaking, error codes mid-cycle" },
+        { icon: "ti-wind", title: "Dryer", symptoms: "No heat, long cycles, burning smell, won't start" },
+        { icon: "ti-droplet", title: "Dishwasher", symptoms: "Not draining, dishes coming out dirty, door leaks" },
+        { icon: "ti-flame", title: "Stove & cooktop", symptoms: "Burner won't light, uneven heat — gas and electric" },
+        { icon: "ti-temperature", title: "Oven", symptoms: "Not reaching temperature, uneven baking, broken door" }
+      ],
+      brands: [
+        { name: "LG", note: "Fridges & washers", href: "/brands/lg" },
+        { name: "Samsung", note: "Full range", href: "/brands/samsung" },
+        { name: "Whirlpool", note: "Laundry & kitchen", href: "/brands/whirlpool" },
+        { name: "Bosch", note: "Dishwashers", href: "/brands/bosch" },
+        { name: "KitchenAid", note: "Kitchen suites", href: "/brands/kitchenaid" }
+      ],
+      reviews: [
+        { quote: "Our fridge died on a Saturday morning. Andriy was here by 2 pm and it was humming again before dinner.", who: "Maria K. · Maple, Vaughan" },
+        { quote: "Quoted a flat price before touching the dryer, finished in under an hour, and the price didn't move. Rare these days.", who: "David L. · Thornhill, Vaughan" },
+        { quote: "Second time using them for our dishwasher. Taras remembered the machine from last year. That's what local gets you.", who: "Susan P. · Aurora Village, Aurora" },
+        { quote: "They actually answer the phone. Booked at 9, fixed by noon, kitchen back to normal. Couldn't ask for more.", who: "Raj S. · Woodbridge, Vaughan" }
+      ],
+      steps: [
+        { n: "1", title: "Call or book", body: "Phone, or the online form — tell us what's acting up." },
+        { n: "2", title: "We confirm a time window", body: "A real 2-hour window, confirmed by text." },
+        { n: "3", title: "Diagnosis on site", body: "We find the fault and explain it in plain words." },
+        { n: "4", title: "Upfront quote, fixed same visit", body: "Flat quote first. Parts on hand? Fixed on the spot." },
+        { n: "5", title: "90-day warranty", body: "Parts and labour covered for 90 days, in writing." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
