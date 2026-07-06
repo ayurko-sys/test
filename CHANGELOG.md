@@ -3,6 +3,24 @@
 Running log of why converted markup differs from the Claude Design export, so
 the client can trace every deviation. Newest first.
 
+## 2026-07-06 — Client decisions folded into the contract
+
+Resolved three CLAUDE.md-vs-sitegen conflicts and updated CLAUDE.md accordingly:
+
+- **Fonts → Lora + Nunito Sans** (was Fraunces + Figtree). The editor's Visual
+  Identity drives the deployed site, so tokens now match it. Gold H1
+  underline/overline are font-agnostic, unchanged.
+- **NAP → tokenize with `{{nap.*}}` site-wide** (supersedes "keep literal 555
+  placeholders"). The 555 values remain the canonical reference NAP.
+- **Dark sections → remap to brand** `--forest`/`--forest-deep`/`--ink`, never
+  Tailwind slate/gray.
+
+Also updated CLAUDE.md to record that sitegen requires Tailwind (Play CDN), the
+`data-editable` region tagging, and the real form hook; and defaulted section
+padding (80/48px) and radii (8/12px) to the CLAUDE.md contract. Still open before
+city pages: per-page SEO/JSON-LD placement and multi-location NAP scheme
+(SITEGEN-NOTES.md §12).
+
 ## 2026-07-06 — Step 1: reverse-engineered sitegen format
 
 - Client provided a real sitegen export + the editor's Visual Identity panel.

@@ -9,7 +9,12 @@ sitegen editor (final assembly by the client).
 
 You do NOT know sitegen's internal format. Never guess it. Your first task in
 any session where `/sitegen-sample/` exists is to reverse-engineer it (see
-Workflow below).
+Workflow below). **Done 2026-07-06 — the confirmed spec is `SITEGEN-NOTES.md`;
+read it before converting. In short: blocks are Tailwind (Play CDN), delimited by
+`<!-- BLOCK N: TYPE (ID: uuid) -->` with a global `<!-- STYLING-HEADER -->`;
+editable regions are tagged `data-editable` / `data-image-editable`; NAP is
+interpolated via `{{nap.*}}`; forms use the `data-contact-form` + `__FORM_ENDPOINT__`
+hook.**
 
 ## Project snapshot
 
@@ -24,12 +29,22 @@ Workflow below).
   form second.
 - Reference site built on the same template: primefixniagaraappliancerepair.ca
 
-## Placeholders — keep EXACTLY as-is (client will find-and-replace later)
+## NAP — emit as sitegen `{{nap.*}}` tokens (confirmed 2026-07-06)
+
+In converted blocks, output NAP through sitegen's interpolation, NOT literals:
+`{{nap.business_name}}`, `{{nap.phone}}` (display), `{{nap.phone_tel}}` (for
+`href="tel:…"`), plus `{{nap.email}}` / `{{nap.address}}` / `{{nap.hours}}`
+(exact field names for email/address/hours TBC — SITEGEN-NOTES.md §12.4).
+
+Canonical reference values (what the client sets in the editor's NAP; keep EXACT
+— never invent addresses/phones; 555 numbers are intentional, non-dialable):
 
 - Vaughan: 240 Chrislea Rd, Unit 11, Vaughan, ON L4L 8V1 — (905) 555-0148
 - Aurora: 15483 Yonge St, Unit 5, Aurora, ON L4G 1P3 — (289) 555-0173
 - info@oakridgesappliancerepair.ca · Mon–Sat 8 am – 8 pm
-Never invent new addresses/phones. 555 numbers are intentional (non-dialable).
+
+Vaughan and Aurora NAP stay separate; the multi-location token scheme is still
+TBC (SITEGEN-NOTES.md §12.5) and blocks /vaughan and /aurora conversion.
 
 ## Design tokens (single source of truth)
 
@@ -50,14 +65,22 @@ Never invent new addresses/phones. 555 numbers are intentional (non-dialable).
 }
 ```
 
-- Headings: **Fraunces** 500–600 (Google Fonts). Body/UI: **Figtree** 400/500/600.
+- Headings: **Lora** 500–600 (Google Fonts). Body/UI: **Nunito Sans** 400/500/600.
+  (Set in sitegen's Visual Identity panel; confirmed 2026-07-06, replacing the
+  original Fraunces/Figtree. Fonts are applied by the deployment template, not by
+  a per-block `<link>`.)
 - Signature details: 64px×2px gold underline below H1; letterspaced gold
   overline (0.14em, --gold-deep) above section headings; trust chips = cream
   pill with 1px forest border; ridgeline SVG divider between select sections.
+- Dark section bands use --forest / --forest-deep / --ink — never Tailwind
+  `slate`/`gray` (confirmed 2026-07-06; the sample's stock slate is off-brand).
 - NO photos of technicians or stock people anywhere. Reviews may mention
   technician first names in text.
-- No CSS frameworks unless sitegen requires one. Vanilla HTML/CSS + minimal JS.
-  Only external dependency: Google Fonts.
+- sitegen requires **Tailwind** (Play CDN) — style blocks with Tailwind utility
+  classes (semantic tokens `bg-primary`/`text-foreground`/… + arbitrary hex
+  `[#E4DCC9]` for tokens the editor doesn't expose; inline-hex fallback on global
+  chrome). Vanilla HTML + minimal JS otherwise (inline `onclick`/`<script>` are
+  allowed). External deps: Tailwind CDN + Google Fonts.
 
 ## Block contract (why the client can paste blocks into sitegen)
 
@@ -124,9 +147,10 @@ Never invent new addresses/phones. 555 numbers are intentional (non-dialable).
 - Header topbar phone is `tel:` linked; sticky header.
 - Mobile: sticky bottom bar, full-width gold "Call (905) 555-0148" button.
 - Booking form fields: appliance select, city select (Vaughan/Aurora), phone.
-  Microcopy: "Diagnostic fee waived with repair". Forms wired per sitegen's
-  mechanism (discover it from the sample; otherwise leave a clearly marked
-  `<!-- TODO: sitegen form hook -->`).
+  Microcopy: "Diagnostic fee waived with repair". Wire via sitegen's real form
+  hook (SITEGEN-NOTES.md §7): `data-contact-form` + `data-field="…"` inputs
+  POSTing to the `__FORM_ENDPOINT__` placeholder; extend that pattern with the
+  appliance/city selects (add them to `data-field` and the payload).
 - Brand pages have NO reviews block. About Us is text-only (no images/stats).
 
 ## Workflow

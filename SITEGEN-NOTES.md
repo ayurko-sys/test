@@ -1,6 +1,8 @@
 # SITEGEN-NOTES.md — reverse-engineered sitegen format
 
-**Status:** DRAFT — awaiting client confirmation before any page conversion.
+**Status:** Format documented; §13 design decisions RESOLVED (fonts, NAP,
+dark-palette, padding, radii). Still blocked on §12 open questions (per-page SEO
+placement, multi-location NAP) before converting city pages.
 **Sources:** `sitegen-sample/home-template.html` (a real exported Home page) +
 `sitegen-sample/visual-identity-settings.md` (editor Colors/Fonts panel).
 **Date:** 2026-07-06.
@@ -251,17 +253,22 @@ The CONVERSION block contains the real mechanism (no more
 6. **Booking form:** does the editor accept extra `data-field` selects
    (appliance, city) added to the `data-contact-form` pattern + payload?
 
-## 13. Conflicts with CLAUDE.md that need a client decision
+## 13. Conflicts with CLAUDE.md — client decisions
 
-1. **Fonts:** editor = Lora + Nunito Sans; CLAUDE.md = Fraunces + Figtree.
-   Change the editor's Visual Identity to Fraunces/Figtree, or update the design
-   tokens to Lora/Nunito Sans? (Affects the H1 underline / overline styling.)
+1. **Fonts:** ✅ **RESOLVED 2026-07-06 — adopt Lora + Nunito Sans.** CLAUDE.md
+   tokens updated; the editor's Visual Identity stays Lora/Nunito Sans. Signature
+   gold underline/overline are font-agnostic and unchanged.
 2. **Section padding:** 80/48px (CLAUDE.md) vs `py-24`/`py-12` (sample).
+   → **Defaulting to the CLAUDE.md contract (80px desktop / 48px mobile ≈
+   `py-20`/`py-12`)** unless you say otherwise.
 3. **Radii:** enforce `--radius-control 8px` / `--radius-card 12px`, or keep the
-   sample's looser `rounded-2xl/3xl`?
-4. **NAP representation:** confirm we replace literal 555 placeholders with
-   `{{nap.*}}` tokens site-wide (recommended, per §6) — this changes the
-   CLAUDE.md "keep placeholders exactly as-is" instruction.
+   sample's looser `rounded-2xl/3xl`? → **Defaulting to the CLAUDE.md tokens**
+   (`rounded-[8px]` controls, `rounded-[12px]` cards) unless you say otherwise.
+4. **NAP representation:** ✅ **RESOLVED 2026-07-06 — tokenize with `{{nap.*}}`
+   site-wide.** Supersedes the CLAUDE.md "keep literal placeholders" rule; the
+   555 values remain the canonical reference NAP.
+5. **Dark-section palette:** ✅ **RESOLVED 2026-07-06 — remap to brand.** Dark
+   bands use `--forest` / `--forest-deep` / `--ink`, never Tailwind `slate`/`gray`.
 
 ---
 
