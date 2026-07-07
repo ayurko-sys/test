@@ -34,18 +34,8 @@
       <div class="hidden md:flex items-center gap-8">
         <ul class="flex items-center gap-7 text-[15px] font-medium" style="color: #2E5636;">
           <li><a href="/" class="text-[#1F3D26] border-b-2 border-[#C29A55] pb-1">Home</a></li>
-
-          <!-- Service Area Dropdown -->
-          <li class="relative group">
-            <button class="flex items-center gap-1 hover:text-[#1F3D26] transition-colors py-4">
-              Service Area
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <ul class="absolute top-full left-0 w-52 py-1.5 bg-[#F7F3EA] border border-[#E4DCC9] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-              <li><a href="/vaughan/" class="block px-5 py-2.5 border-l-[3px] border-transparent hover:border-[#C29A55] hover:bg-white hover:text-[#1F3D26] transition-colors">Vaughan</a></li>
-              <li><a href="/aurora/" class="block px-5 py-2.5 border-l-[3px] border-transparent hover:border-[#C29A55] hover:bg-white hover:text-[#1F3D26] transition-colors">Aurora</a></li>
-            </ul>
-          </li>
+          <li><a href="/vaughan/" class="hover:text-[#1F3D26] transition-colors">Vaughan</a></li>
+          <li><a href="/aurora/" class="hover:text-[#1F3D26] transition-colors">Aurora</a></li>
 
           <!-- Brands Dropdown -->
           <li class="relative group">
@@ -93,18 +83,8 @@
         <a href="/" class="flex items-center justify-between py-3 px-4 text-lg font-medium border-b border-[#E4DCC9]/50 text-[#1F3D26]">
           Home <span class="w-6 h-0.5 bg-[#C29A55]"></span>
         </a>
-
-        <!-- Service Area accordion -->
-        <div class="flex flex-col">
-          <button class="flex items-center justify-between py-3 px-4 text-lg font-medium border-b border-[#E4DCC9]/50 text-[#1F3D26]" onclick="document.getElementById('mobile-areas').classList.toggle('hidden')">
-            Service Area
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div id="mobile-areas" class="hidden bg-[#F1EBE0] flex flex-col">
-            <a href="/vaughan/" class="py-3 px-8 border-b border-[#E4DCC9]/30 text-[#2E5636]">Vaughan</a>
-            <a href="/aurora/" class="py-3 px-8 border-b border-[#E4DCC9]/30 text-[#2E5636]">Aurora</a>
-          </div>
-        </div>
+        <a href="/vaughan/" class="py-3 px-4 text-lg font-medium border-b border-[#E4DCC9]/50 text-[#2E5636]">Vaughan</a>
+        <a href="/aurora/" class="py-3 px-4 text-lg font-medium border-b border-[#E4DCC9]/50 text-[#2E5636]">Aurora</a>
 
         <!-- Brands accordion -->
         <div class="flex flex-col">

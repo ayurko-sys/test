@@ -3,6 +3,14 @@
 Running log of why converted markup differs from the Claude Design export, so
 the client can trace every deviation. Newest first.
 
+## 2026-07-06 — Header nav reverted to match the design
+
+- Confirmed via editor screenshot that the rebuilt header now imports into sitegen.
+- The design (states A/B) keeps Vaughan and Aurora as top-level nav items; the
+  "Service Area" dropdown I had added was a deviation. Reverted: nav is now
+  Home · Vaughan · Aurora · Brands ▾ · About · Contact on desktop, and the same
+  as top-level links + Brands accordion on mobile — matching the design exactly.
+
 ## 2026-07-06 — Block 01 (Header) rebuilt for sitegen compatibility
 
 - Client reported the first header was **rejected by sitegen**. Root cause: it
