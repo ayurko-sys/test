@@ -30,25 +30,50 @@
 
 ---
 
-## 3. Мапінг дизайн-системи Fraser → Tailwind-тема Sitegen
+## 3. Налаштування теми Sitegen (ЗАТВЕРДЖЕНО 2026-07-14, під реальні поля адмінки)
 
-З Claude design проєкту `Fraser Appliance Repair Design System` (`tokens/colors.css`):
+Sitegen дає 5 глобальних кольорів + 2 шрифти (Visual Identity) + окрему панель Form Appearance.
+**Рішення:** `primary` = steel blue (НЕ амбер!), бо primary фарбує іконки/лінки/ховери по всьому сайту — амбер туди не можна за правилом DS. Амбер живе в Accent + Form Button, а CTA-кнопки блоків переводимо на accent адресно при допилі.
 
-| Tailwind токен | Значення Fraser DS | Примітка |
+### Visual Identity
+| Поле Sitegen | Значення | Токен DS |
 |---|---|---|
-| `primary` | **amber `#E8730C`** | CTA-кнопки «Book Now» (в коді вони `bg-primary`) — амбер строго тільки CTA + Same-Day бейдж |
-| `primary-foreground` | ink `#141517` | по DS на амбері — темний текст (6.1:1), НЕ білий |
-| `secondary` | deep blue `#1C507A` | utility top bar (`bg-secondary`), click-to-call кнопки |
-| `foreground` | ink `#141517` | |
-| `muted-foreground` | slate-500 `#5B6A76` | |
-| `background` / `card` | `#FFFFFF`, alt `#F6F9FB` (paper) / `#EAF1F6` (mist) | секції, що чергуються |
-| `border` | line `#D4DFE7` | |
-| темні секції | `bg-slate-900` → panel **`#0E2B43`** (blue-950) | hero-оверлей, TRUST-стрічка, футер |
-| `destructive` | `#C0392B` | |
-| focus ring | steel blue `#317CAB` @35% | |
-| Зірки відгуків | **brand blue `#317CAB`**, не `text-yellow-400` | правило DS |
-| Радіуси | кнопки/інпути 8px (`rounded-lg`), картки 16px (`rounded-2xl`) | у коді мікс `rounded-full`/`rounded-lg`/`rounded-xl` — уніфікувати |
-| Шрифти | Archivo (заголовки) + Public Sans (текст), Google Fonts | додати `<link>` + font-family у тему |
+| Primary Color | `#317CAB` | blue-500 (лого mark) — іконки, лінки, ховери |
+| Secondary Color | `#1C507A` | blue-800 — utility top bar, click-to-call |
+| Accent Color | `#E8730C` | amber-500 — строго CTA + Same-Day бейдж |
+| Background | `#FFFFFF` | секції paper/mist — класами блоків при допилі |
+| Text Color | `#141517` | ink |
+| Heading Font | Archivo | Google Fonts |
+| Body Font | Public Sans | Google Fonts |
+
+Brand Tone: Professional (голос «expert neighbour» дотискаємо текстами).
+
+### Form Appearance
+| Поле | Значення | Токен DS |
+|---|---|---|
+| Form Background | `#FFFFFF` | |
+| Text Color | `#141517` | ink |
+| Border Color | `#D4DFE7` | line |
+| Input Background | `#FFFFFF` | |
+| Accent / Button | `#E8730C` | amber-500 |
+| Button Hover | `#CC6410` | amber-600 |
+| Placeholder Color | `#7D8B96` | slate-400 |
+| Border Radius | `0.5rem` | = 8px radius-input/button (уже стоїть) |
+
+### Ручні правки поверх теми (етап допилу блоків)
+- CTA-кнопки блоків (`bg-primary`: header «Book Now», hero «Book Online Now», футерна band-кнопка) → амбер `#E8730C` з ink-текстом `#141517` (правило: один амберний CTA на в'юпорт).
+- Сабміт форми: `text-white` → `#141517` (білий на амбері ~3:1 — фейл AA; ink = 6.1:1). Альтернатива, якщо потрібен білий текст: кнопка `#A94F0A` (5.5:1).
+- Темні секції `bg-slate-900` → panel `#0E2B43` (blue-950).
+- Зірки відгуків `text-yellow-400` → brand blue `#317CAB` (правило DS).
+- Чергування фону секцій: paper `#F6F9FB` / mist `#EAF1F6`.
+- Радіуси: кнопки/інпути 8px (`rounded-lg`), картки 16px (`rounded-2xl`) — прибрати мікс `rounded-full`/`rounded-xl`.
+- muted-текст → slate-500 `#5B6A76`; борди → `#D4DFE7`; destructive `#C0392B`; focus ring `#317CAB` @35%.
+
+### Відповіді платформи (зафіксовано)
+- Дубль header/footer — лише артефакт редактора; на домені ок. Правимо САЙТ-ВАЙД версію (`SITE-WIDE HEADER`).
+- Title/meta — поки не чіпаємо (нагадає власник).
+- Форма: поля/структуру НЕ міняти, лише стиль. (Отже селекти «Appliance type»/«City» — скасовано.)
+- JSON-LD schema — можна доставляти окремим блоком `<script type="application/ld+json">`.
 
 ---
 
@@ -67,7 +92,7 @@
 - [ ] BLOCK 3: інтро-текст ок (Fraser River storytelling) — лишити
 - [ ] BLOCK 4 Services: 5 карток + «Not sure?» — додати Freezer (окремо чи в Refrigerator) і Range hood за потреби; посилання «Book this» → на `#booking`-якір форми (якір існує? зараз форма без `id="booking"` — додати)
 - [ ] BLOCK 5 TRUST: бренд-стрічка ок (5 брендів лінками + другорядні текстом) — другорядні бренди (GE, Maytag…) зробити теж клікабельними колись з'являться сторінки; поки лишити
-- [ ] BLOCK 6 CONVERSION: додати поля «Appliance type» (select) і «City» (select: Surrey/Delta/White Rock) — ОНОВИТИ і payload у JS (зараз hardcoded name/phone/email/terms)
+- [ ] BLOCK 6 CONVERSION: поля НЕ чіпаємо (рішення платформи/власника) — тільки стиль: амберний сабміт з ink-текстом, борди `#D4DFE7`, радіус 8px; додати `id="booking"` секції для якорів «Book this»
 - [ ] BLOCK 7 TESTIMONIAL: підписи «David S. — Surrey» ок; зірки → brand blue
 - [ ] BLOCK 8: картки міст ок (районні списки вже локалізовані); «[Interactive Map Embed]» → реальний embed Google Map service area
 - [ ] Footer: «North Delta · Ladner · Tsawwassen · South Surrey · Semiahmoo Peninsula» — чудово, лишити
@@ -79,10 +104,10 @@
 
 ---
 
-## 5. Питання до платформи Sitegen (з'ясувати в адмінці)
+## 5. Питання до платформи — ВСІ ЗАКРИТІ (відповіді в кінці розділу 3)
 
-1. Де редагується tailwind-тема (мапінг `primary`/`secondary`/...)? Потрібно вшити палітру Fraser DS (розділ 3).
-2. Дубль header/footer — прев'ю-артефакт чи потрапляє в продакшн-експорт?
-3. Де задаються `<title>`/`<meta description>` per page?
-4. Чи можна додати кастомні поля у форму зі збереженням інтеграції (`__FORM_ENDPOINT__` приймає довільний JSON?), і чи CallRail captureForm підхопить нові поля?
-5. Чи можна вставити довільний `<script type="application/ld+json">` блок (для schema)?
+1. ~~Тема~~ → Visual Identity + Form Appearance в адмінці (значення затверджено в розділі 3).
+2. ~~Дубль header/footer~~ → артефакт редактора, на домені ок.
+3. ~~Title/meta~~ → відкладено, нагадає власник.
+4. ~~Кастомні поля форми~~ → форму не міняємо, тільки стиль.
+5. ~~JSON-LD~~ → так, окремим script-блоком.
