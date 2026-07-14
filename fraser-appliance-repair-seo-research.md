@@ -156,60 +156,57 @@ Sticky click-to-call (мобайл), H1 «Same-Day Appliance Repair in [City]»,
 
 ---
 
-## 5. Структура сайту (для Sitegen-промпту)
+## 5. Структура сайту — ЗАТВЕРДЖЕНА (15 сторінок, правки клієнта 2026-07-14)
 
-Референс sasktechappliancerepair.ca недоступний (Cloudflare 403, 0 сторінок в індексі Google і в Ahrefs — ймовірно, свіжий/закритий) — структуру складено з патернів ніші + конкурентного аналізу. Slug-патерн: `/{service}-repair-{city}/` не потрібен — беремо чисті slug + міста як location pages.
+Референс sasktechappliancerepair.ca недоступний ззовні (Cloudflare/egress block, 0 сторінок в індексі) — структура затверджена за нотатками команди (скріншот) + правками. Окремих сторінок послуг НЕ робимо: сервісна семантика («dryer repair surrey») закривається блоками на Home та сторінках локацій.
 
-### Хвиля 1 — запуск (18 сторінок)
-1. **/** — Home: «Same-Day Appliance Repair in Surrey, Delta & White Rock» + trust-блок + сервіси + бренди + міста + відгуки + FAQ
-2. **/about/** — EEAT-хаб: команда з іменами/фото, Red Seal/TSBC/WorkSafeBC/insured, since 2020 + «X repairs completed», фото бусів/робіт
-3. **/contact/** — телефон, форма 4 поля, години, service area map
-4. **/reviews/** — відгуки з міток міст (embedded Google/HomeStars)
-5. **/pricing/** — діагностика/fee-waived політика, діапазони по послугах (майже ні в кого немає)
-6. **/faq/** — все, що раніше жило в GBP Q&A (Ask Maps/AI читає сайт)
+### Правила з нотаток команди (обов'язкові)
+- **Фото техніків не використовуємо взагалі.**
+- **Home — нейтральна від ключів:** бренд + Neighborhood + 3 міста без комерційних ключів. Секції: промо, про нас, service area, відгуки, сервіси без локальної прив'язки, вигоди роботи з нами, щось локальне.
+- **Локації:** промо, сервіси + локація, бренд + локал (типу «samsung appliance repair in Surrey»), відгуки, бук-форма.
+- **Бренд-сторінки:** бренд згадуємо разом з усіма 3 локаціями; промо + типи техніки, які ремонтуємо + service area + recent jobs (в чому проблема / як пофіксили) + бук-форма. **Відгуки на бренд-сторінках не виводимо.**
+- **About Us:** текстовий формат, без картинок, без статистики, без візуалу; історія компанії (Fraser-сторітелінг). Вік компанії в копірайті — 3–5 років максимум (компанія з 2020 — пишемо «since 2020» без «decades of experience»).
 
-Послуги (7):
-7. **/refrigerator-repair/** (fridge+freezer; 200+100 vol, KD 2–5, TP 700)
-8. **/washer-repair/** (washing machine; 90+40)
-9. **/dryer-repair/** (150, KD 1)
-10. **/dishwasher-repair/** (40, KD 31 — тягнемо TP 700 хвостами)
-11. **/oven-repair/** (oven+range; TP 800)
-12. **/stove-cooktop-repair/** (TP 800)
-13. **/appliance-installation/** (опційно, якщо послуга є)
+### 15 сторінок
+| # | Сторінка | URL |
+|---|---|---|
+| 1 | Home | `/` |
+| 2 | Appliance Repair Surrey | `/appliance-repair-surrey/` |
+| 3 | Appliance Repair Delta | `/appliance-repair-delta/` |
+| 4 | Appliance Repair White Rock | `/appliance-repair-white-rock/` |
+| 5 | Samsung | `/samsung-appliance-repair/` |
+| 6 | LG | `/lg-appliance-repair/` |
+| 7 | Bosch | `/bosch-appliance-repair/` |
+| 8 | Whirlpool | `/whirlpool-appliance-repair/` |
+| 9 | KitchenAid | `/kitchenaid-appliance-repair/` |
+| 10 | About Us | `/about-us/` |
+| 11 | Contact Us | `/contact/` |
+| 12 | Privacy Policy | `/privacy-policy/` |
+| 13 | Terms & Conditions | `/terms-and-conditions/` |
+| 14 | Cancellation Policy | `/cancellation-policy/` |
+| 15 | Warranty | `/warranty/` |
 
-Локації (3):
-14. **/appliance-repair-surrey/** — 6 town centres, сюїти, Clayton warranty cliff, хвости fridge/washer/dryer repair surrey
-15. **/appliance-repair-delta/** — секції North Delta / Ladner / Tsawwassen (три комʼюніті!), weekend-angle
-16. **/appliance-repair-white-rock/** — + South Surrey peninsula, сеньйори, strata, преміум-бренди
+П'ятий бренд: **KitchenAid** (кластер ~450, head 300/KD 1) > Maytag (~300) > GE (~240; TP 1600, але слабший комерційний кластер). GE/Maytag — кандидати на розширення пізніше.
 
-Бренди (5) — рішення по Ahrefs:
-17. **/samsung-appliance-repair/**
-18. **/lg-appliance-repair/**
-19. **/bosch-appliance-repair/** (акцент dishwasher — 400 vol KD 0)
-20. **/whirlpool-appliance-repair/**
-21. **/kitchenaid-appliance-repair/**
-
-### Хвиля 2 (3–6 міс) — блог/проблемні сторінки (KD 0–4, AI Overviews-зона)
-`fridge not cooling`, `fridge leaking water`, `washer not draining`, `dryer not heating`, `dishwasher not draining`, `samsung fridge error codes`, `lg washer error codes`, `bosch dishwasher error codes (E15…)`, `appliance repair cost BC / is it worth repairing`, «repair or replace: the 50/50 rule» (PAA в SERP Surrey!). Кожна: симптоми → причини → DIY → «when to call» + CTA на бренд/місто, назва компанії й міста в тексті відповіді (для цитування AI).
-+ Бренд-сторінки другої черги: Maytag, GE, Miele (або блоки в сервісних).
+### Хвиля 2 (3–6 міс, після індексації) — блог/проблемні сторінки (KD 0–4, AI Overviews-зона)
+`fridge not cooling`, `fridge leaking water`, `washer not draining`, `dryer not heating`, `dishwasher not draining`, `samsung fridge error codes`, `lg washer error codes`, `bosch dishwasher error codes (E15…)`, «repair or replace: the 50/50 rule» (PAA в SERP Surrey!). Кожна: симптоми → причини → DIY → «when to call» + CTA на бренд/місто, назва компанії й міста в тексті відповіді (для цитування AI).
 
 ### Внутрішня перелінковка
-Problem page → Brand page → City page → CTA. «Areas We Serve» hub у футері. Кожна сторінка міста: 2–4 відгуки з цього міста, фото робіт звідти, райони списком, embedded map, локальний FAQ 3–5 питань — ніяких find-and-replace шаблонів (doorway-фільтр).
+Home → локації + бренди; локації ↔ бренди перехресно (блок «brand + city»); футер: «Areas We Serve» (3 міста) + бренди + службові. Кожна сторінка міста: відгуки з цього міста, райони списком, embedded map, локальний FAQ 3–5 питань — ніяких find-and-replace шаблонів (doorway-фільтр).
 
 ---
 
-## 6. Відкриті питання до власника бізнесу (блокери EEAT-контенту)
+## 6. Відкриті питання до власника бізнесу (закриті скріншотом позначено)
 
-1. **Скріншот структури не дійшов** — прикріпіть повторно або скиньте список сторінок текстом.
-2. sasktechappliancerepair.ca закритий Cloudflare і відсутній в індексах — підтвердіть домен (можливо, малось на увазі saskatoonappliancerepair.ca?) або дайте доступ/скріншоти.
+1. ~~Скріншот структури~~ — отримано 2026-07-14, правила внесено в розділ 5.
+2. ~~Структура/бренди~~ — затверджено 15 сторінок; 5-й бренд KitchenAid (рекомендація за даними; альтернатива Maytag).
 3. **База (адреса/місто) компанії** — визначає радіус map pack: Surrey? Delta? Це найважливіше невідоме.
-4. Реальні сертифікати: Red Seal? TSBC gas licence (чи робите газові прилади)? WorkSafeBC? Страховка?
-5. Гарантія (пропоную 6–12 міс parts+labour — довше за ринок), діагностичний збір і чи waived with repair?
+4. Сертифікати для трасту: Red Seal? TSBC gas licence (чи робите газові прилади)? WorkSafeBC? Страховка? (Фото техніків не потрібні — нотатки; траст даємо текстом.)
+5. Гарантія (пропоную 6–12 міс parts+labour — довше за ринок; окрема сторінка /warranty/ вже в структурі), діагностичний збір і чи waived with repair?
 6. Години роботи: вікенди/вечори? (Weekend = ключовий gap у Delta.)
-7. Імена/фото техніків для біо; кількість виконаних ремонтів з 2020.
-8. Чи є Punjabi-speaking техніки (37,8% Surrey — South Asian)?
-9. Телефон/NAP, домен (є? бажано .ca), Google Business Profile вже існує?
-10. Які бренди реально ремонтуєте (звірити з нашою п'ятіркою) і чи робите преміум (Sub-Zero/Wolf/Miele) для South Surrey/White Rock?
+7. Телефон/NAP, домен (бажано .ca), Google Business Profile вже існує?
+8. Чи є Punjabi-speaking диспетчер/техніки (37,8% Surrey — South Asian)? Згадувати лише якщо реально є.
+9. Преміум-бренди (Sub-Zero/Wolf/Miele) для South Surrey/White Rock — робите?
 
 ---
 
